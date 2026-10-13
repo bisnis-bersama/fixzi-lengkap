@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101010">
+<title>FIXZY BUSINESS | Business Command Center</title>
+<style>
+:root{--gold:#ffc928;--gold2:#ffdf72;--bg:#090b10;--panel:#121620;--line:#292f3c;--muted:#aab2c0;--white:#f7f8fb}
+*{box-sizing:border-box}
+body{margin:0;color:var(--white);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(ellipse at 80% -10%,#5a4315 0,transparent 34%),radial-gradient(ellipse at -10% 45%,#172c38 0,transparent 34%),var(--bg);min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:34px 34px}
+.wrap{position:relative;width:min(1120px,100% - 32px);margin:auto;padding:30px 0 22px}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #ffffff16;padding-bottom:18px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:54px;height:54px;object-fit:contain;border-radius:15px;background:linear-gradient(135deg,#fff,#e9e9e9);padding:5px;box-shadow:0 0 28px #ffc92824}
+.eyebrow{font-size:10px;letter-spacing:3px;color:var(--gold);font-weight:800;text-transform:uppercase}
+.brand h1{font-size:clamp(19px,3vw,28px);letter-spacing:1px;margin:3px 0 0;font-weight:900}
+.status{font-size:11px;color:#c9d1de;border:1px solid #ffffff20;border-radius:999px;padding:8px 12px;white-space:nowrap}
+.status i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#65df9b;margin-right:7px;box-shadow:0 0 10px #65df9b}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;padding:42px 0 30px}
+.hero h2{font-size:clamp(32px,6vw,62px);line-height:.99;letter-spacing:-2px;margin:12px 0 18px;max-width:720px}
+.hero h2 span{color:var(--gold)}
+.hero p{max-width:650px;color:#b8c0ce;line-height:1.8;font-size:14px;margin:0}
+.hero-art{min-height:200px;position:relative;display:grid;place-items:center;overflow:hidden}
+.orbit{width:205px;height:205px;border:1px solid #ffc92865;border-radius:50%;display:grid;place-items:center;position:relative;box-shadow:0 0 70px #ffc92812,inset 0 0 50px #ffc92809}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #ffffff17;border-radius:50%;inset:18px}
+.orbit:after{inset:39px;border-color:#ffc92845}
+.core{width:94px;height:94px;background:linear-gradient(145deg,#ffe58a,#f5ad00);border-radius:27px;display:grid;place-items:center;color:#17130a;font-size:23px;font-weight:1000;transform:rotate(-8deg);box-shadow:0 12px 55px #ffc92840}
+.node{position:absolute;width:11px;height:11px;background:var(--gold);border-radius:50%;box-shadow:0 0 16px var(--gold)}
+.n1{top:24px;left:40px}.n2{right:15px;top:84px}.n3{bottom:20px;left:63px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:10px 0 16px}
+.section-head h3{font-size:19px;margin:0 0 6px}.section-head p{margin:0;color:var(--muted);font-size:12px}
+.count{font-size:11px;color:var(--gold);border:1px solid #ffc92855;border-radius:9px;padding:8px 10px;white-space:nowrap}
+.apps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.app{min-height:188px;position:relative;overflow:hidden;background:linear-gradient(145deg,#171c27,#10131b);border:1px solid var(--line);border-radius:17px;padding:18px;display:flex;flex-direction:column;transition:.2s;text-decoration:none;color:inherit}
+.app:before{content:"";position:absolute;width:110px;height:110px;border:1px solid #ffc92819;border-radius:50%;right:-44px;top:-44px;box-shadow:0 0 0 16px #ffc92806,0 0 0 32px #ffc92804}
+.app:hover,.app:focus-visible{outline:none;transform:translateY(-4px);border-color:#d9a916;box-shadow:0 16px 38px #0007}
+.app-icon{width:43px;height:43px;border-radius:13px;background:#ffc92814;border:1px solid #ffc9284a;color:var(--gold);display:grid;place-items:center;font-size:19px;font-weight:900;margin-bottom:17px}
+.app h4{font-size:15px;margin:0 0 8px;line-height:1.35}
+.app p{font-size:11px;color:#9ea7b7;line-height:1.55;margin:0 0 18px}
+.open{display:flex;justify-content:space-between;align-items:center;margin-top:auto;color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.5px}
+.open b{width:27px;height:27px;border-radius:50%;background:var(--gold);color:#17130a;display:grid;place-items:center;font-size:15px}
+.bottom{margin-top:24px;padding:19px 0 0;border-top:1px solid #ffffff16;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#737e8e;font-size:10px;letter-spacing:.8px}
+.bottom strong{color:#c9cfda}
+@media(min-width:1100px){.apps{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:700px) and (max-width:1099px){.wrap{width:min(900px,100% - 32px)}.apps{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr .55fr}.hero-art{transform:scale(.85)}}
+@media(min-width:561px) and (max-width:699px){.apps{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}.hero-art{display:none}}
+@media(max-width:560px){
+  .wrap{width:calc(100% - 24px);padding-top:16px}
+  .topline{align-items:center}
+  .brand{gap:9px;min-width:0}
+  .logo{width:44px;height:44px;border-radius:12px}
+  .eyebrow{font-size:9px;letter-spacing:1.8px}
+  .brand h1{font-size:19px;letter-spacing:.3px}
+  .status{font-size:0;padding:9px}.status i{margin:0}
+  .hero{grid-template-columns:1fr;padding:28px 0 24px}
+  .hero h2{font-size:clamp(31px,9vw,43px);letter-spacing:-1.5px}
+  .hero p{font-size:13px;line-height:1.7}
+  .hero-art{display:none}
+  .apps{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .app{padding:13px 12px;min-height:184px;border-radius:14px}
+  .app-icon{width:36px;height:36px;border-radius:11px;font-size:15px;margin-bottom:13px}
+  .app h4{font-size:13px;overflow-wrap:anywhere}
+  .app p{font-size:10px;line-height:1.5}
+  .open{font-size:9px;letter-spacing:0}
+  .open b{width:23px;height:23px}
+  .section-head{align-items:center}
+  .section-head h3{font-size:17px}
+  .section-head p{max-width:230px;line-height:1.5;font-size:11px}
+  .count{font-size:9px;padding:7px}
+  .bottom{font-size:9px;line-height:1.6}
+}
+@media(max-width:360px){.apps{grid-template-columns:1fr}.app{min-height:150px}.app p{font-size:11px}.open{font-size:10px}}
+
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="topline">
+    <div class="brand">
+      <img class="logo" src="logofixzy.html" alt="Logo Fixzy" onerror="this.onerror=null;this.src='logofixzy.png'">
+      <div><div class="eyebrow">Business ecosystem</div><h1>FIXZY BUSINESS</h1></div>
+    </div>
+    <div class="status"><i></i>PORTAL AKTIF</div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">One portal · Multiple solutions</div>
+      <h2>Semua akses bisnis,<br><span>dalam satu tempat.</span></h2>
+      <p>Selamat datang di pusat akses digital FIXZY BUSINESS. Buka aplikasi usaha, layanan teknisi, toko online, registrasi acara, hingga alat bantu harian dari satu halaman yang praktis dan tertata.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true"><div class="orbit"><span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><div class="core">FX</div></div></div>
+  </section>
+
+  <section>
+    <div class="section-head"><div><h3>Direktori Aplikasi</h3><p>Pilih layanan yang ingin Anda gunakan.</p></div><div class="count">08 LAYANAN</div></div>
+    <nav class="apps" aria-label="Direktori aplikasi">
+      <a class="app" href="https://fixzy-business.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-icon">FX</div><h4>Fixzy Business</h4><p>Portal utama untuk layanan dan kebutuhan bisnis Fixzy.</p><span class="open">BUKA APLIKASI <b>↗</b></span></a>
+      <a class="app" href="https://fixzy-olive.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-icon">OL</div><h4>Fixzy Olive</h4><p>Akses aplikasi Fixzy Olive melalui tautan khusus.</p><span class="open">BUKA APLIKASI <b>↗</b></span></a>
+      <a class="app" href="https://teknisi-pondel-maja.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-icon">TP</div><h4>Teknisi Ponsel Maja</h4><p>Portal layanan dan informasi seputar teknisi ponsel.</p><span class="open">BUKA APLIKASI <b>↗</b></span></a>
+      <a class="app" href="https://toko-siap-antar.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-icon">SA</div><h4>Toko Siap Antar</h4><p>Akses katalog dan layanan toko dengan praktis.</p><span class="open">BUKA TOKO <b>↗</b></span></a>
+      <a class="app" href="https://konter-ayudithea.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-icon">AY</div><h4>Konter A Yudi Thea</h4><p>Halaman konter untuk kebutuhan servis dan produk ponsel.</p><span class="open">BUKA KONTER <b>↗</b></span></a>
+      <a class="app" href="https://registrasi-peserta.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-icon">RG</div><h4>Registrasi Peserta</h4><p>Akses halaman pendaftaran dan administrasi peserta acara.</p><span class="open">BUKA REGISTRASI <b>↗</b></span></a>
+      <a class="app" href="https://bisnisyudi68-lang.github.io/Tracker-Ibadah-Harian" target="_blank" rel="noopener noreferrer"><div class="app-icon">IB</div><h4>Tracker Ibadah Harian</h4><p>Alat bantu untuk mencatat dan memantau rutinitas ibadah.</p><span class="open">BUKA TRACKER <b>↗</b></span></a>
+      <a class="app" href="https://datausaha070-source.github.io/Cek-healty-storage" target="_blank" rel="noopener noreferrer"><div class="app-icon">ST</div><h4>Cek Healthy Storage</h4><p>Gunakan alat bantu pemeriksaan informasi storage perangkat.</p><span class="open">BUKA ALAT <b>↗</b></span></a>
+    </nav>
+  </section>
+
+  <footer class="bottom"><span><strong>FIXZY BUSINESS</strong> · DIGITAL ACCESS CENTER</span><span>TERINTEGRASI DALAM SATU HALAMAN</span></footer>
+</main>
+</body>
+</html>
