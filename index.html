@@ -29,7 +29,7 @@ a{color:inherit}
 .promo-track{display:flex;will-change:transform;transition:transform .85s cubic-bezier(.22,.75,.25,1);touch-action:pan-y}
 .promo-slide{position:relative;flex:0 0 100%;min-width:0;min-height:clamp(270px,42vw,510px);overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;background:radial-gradient(ellipse at 70% 50%,#5b460c 0,#17130a 35%,#050609 72%)}
 .promo-slide:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 25%,#ffd4000b 50%,transparent 70%)}
-.promo-slide img{display:block;width:100%;height:100%;max-height:510px;object-fit:contain;grid-column:1/-1;background:#030303}
+.promo-slide img{display:block;width:100%;height:100%;max-height:510px;aspect-ratio:16/9;object-fit:contain;grid-column:1/-1;background:#030303}
 .promo-copy{position:relative;z-index:1;padding:clamp(24px,5vw,58px);max-width:760px}
 .promo-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;background:#ffd400;color:#111;border-radius:6px;font-size:clamp(9px,1.1vw,12px);font-weight:950;letter-spacing:.7px}
 .promo-copy h2{font-size:clamp(30px,5vw,66px);line-height:.98;letter-spacing:-2px;margin:20px 0 15px;font-weight:1000;text-transform:uppercase}
@@ -115,7 +115,7 @@ h1 span{color:var(--yellow)}
 .promo-wrap{padding:14px 0 2px}
 .promo-carousel{border-radius:12px}
 .promo-slide{grid-template-columns:1fr;min-height:370px}
-.promo-slide img{height:auto;max-height:none;width:100%;object-fit:contain}
+.promo-slide img{height:auto;max-height:none;width:100%;aspect-ratio:16/9;object-fit:contain}
 .promo-copy{padding:27px 23px 12px}
 .promo-copy h2{font-size:clamp(30px,8vw,46px);letter-spacing:-1.5px;margin:15px 0 12px}
 .promo-copy p{font-size:12px;line-height:1.6}
@@ -152,7 +152,7 @@ h1 span{color:var(--yellow)}
   <div class="promo-carousel" id="promoCarousel">
     <div class="promo-track" id="promoTrack">
       <a class="promo-slide" href="https://fixzy-business.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Kenali FIXZY BUSINESS">
-        <img src="fixzy-business-banner.png" alt="FIXZY BUSINESS — solusi digital untuk usaha servis HP, servis, penjualan, stok, dan keuangan">
+        <img src="fixzy-business-banner-landscape.png" alt="FIXZY BUSINESS — solusi digital untuk usaha servis HP, servis, penjualan, stok, dan keuangan">
       </a>
       <div class="promo-slide alt-blue">
         <div class="promo-copy">
