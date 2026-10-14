@@ -2,34 +2,37 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#05070D">
 <title>FIXZY BUSINESS — Digital Command Center</title>
 <style>
 :root{--black:#05070D;--black2:#101522;--yellow:#FFD400;--yellow2:#FFE66D;--blue:#0756D9;--ink:#171717;--muted:#666;--line:#e8e8e8;--white:#fff}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--black);color:#fff;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--black);color:#fff;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
 a{color:inherit}
-.shell{width:min(1180px,calc(100% - 40px));margin:auto}
-.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff20}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-frame{width:48px;height:48px;display:grid;place-items:center;background:#050505;border:1px solid var(--yellow);border-radius:13px;overflow:hidden;box-shadow:0 0 20px #FFD4001a}
+img{max-width:100%}
+.shell{width:min(1180px,calc(100% - 40px));margin-inline:auto;min-width:0}
+.topbar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid #ffffff20}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.logo-frame{flex:0 0 48px;width:48px;height:48px;display:grid;place-items:center;background:#050505;border:1px solid var(--yellow);border-radius:13px;overflow:hidden;box-shadow:0 0 20px #FFD4001a}
 .logo-frame img{width:100%;height:100%;object-fit:contain;padding:4px}
-.brand-label{font-size:9px;letter-spacing:2.8px;color:var(--yellow);font-weight:900}
-.brand-name{font-size:19px;font-weight:950;letter-spacing:1.1px;margin-top:3px}
-.top-right{display:flex;align-items:center;gap:10px}
-.live{font-size:10px;font-weight:800;letter-spacing:1.2px;color:#e8e8e8;border:1px solid #383838;border-radius:99px;padding:9px 12px}
+.brand-copy{min-width:0}
+.brand-label{display:block;font-size:9px;line-height:1.5;letter-spacing:2.8px;color:var(--yellow);font-weight:900}
+.brand-name{display:block;font-size:19px;line-height:1.25;font-weight:950;letter-spacing:1.1px;margin-top:3px;white-space:nowrap}
+.top-right{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.live{font-size:10px;font-weight:800;letter-spacing:1.2px;color:#e8e8e8;border:1px solid #383838;border-radius:99px;padding:9px 12px;white-space:nowrap}
 .live:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yellow);margin-right:8px;box-shadow:0 0 9px var(--yellow)}
-.top-tag{font-size:10px;color:#111;background:var(--yellow);font-weight:950;letter-spacing:1px;padding:9px 11px;border-radius:7px}
+.top-tag{font-size:10px;color:#111;background:var(--yellow);font-weight:950;letter-spacing:1px;padding:9px 11px;border-radius:7px;white-space:nowrap}
 
-/* CAROUSEL PROMO FIXZY BUSINESS */
+/* CAROUSEL PROMO */
 .promo-wrap{padding:24px 0 8px}
 .promo-carousel{position:relative;width:100%;overflow:hidden;border:1px solid #6e5c18;border-radius:18px;background:#030407;box-shadow:0 18px 55px #0009,0 0 30px #ffd40010;isolation:isolate}
-.promo-track{display:flex;will-change:transform;transition:transform .85s cubic-bezier(.22,.75,.25,1);touch-action:pan-y}
-.promo-slide{position:relative;flex:0 0 100%;min-width:0;min-height:clamp(270px,42vw,510px);overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;background:radial-gradient(ellipse at 70% 50%,#5b460c 0,#17130a 35%,#050609 72%)}
+.promo-track{display:flex;align-items:stretch;will-change:transform;transition:transform .65s cubic-bezier(.22,.75,.25,1);touch-action:pan-y}
+.promo-slide{position:relative;flex:0 0 100%;width:100%;min-width:0;min-height:0;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;background:radial-gradient(ellipse at 70% 50%,#5b460c 0,#17130a 35%,#050609 72%)}
 .promo-slide:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 25%,#ffd4000b 50%,transparent 70%)}
-.promo-slide img{display:block;width:100%;height:100%;max-height:510px;aspect-ratio:16/9;object-fit:contain;grid-column:1/-1;background:#030303}
+.promo-slide:first-child{display:block;line-height:0}
+.promo-slide img{display:block;width:100%;height:auto;max-height:620px;aspect-ratio:auto;object-fit:contain;grid-column:1/-1;background:#030303}
 .promo-copy{position:relative;z-index:1;padding:clamp(24px,5vw,58px);max-width:760px}
 .promo-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;background:#ffd400;color:#111;border-radius:6px;font-size:clamp(9px,1.1vw,12px);font-weight:950;letter-spacing:.7px}
 .promo-copy h2{font-size:clamp(30px,5vw,66px);line-height:.98;letter-spacing:-2px;margin:20px 0 15px;font-weight:1000;text-transform:uppercase}
@@ -81,8 +84,8 @@ h1 span{color:var(--yellow)}
 .ol1{top:22px;right:4px}.ol2{bottom:28px;left:0}.ol3{bottom:3px;right:25px;color:var(--yellow);border-color:#FFD40055}
 .spark{position:absolute;width:8px;height:8px;background:var(--yellow);border-radius:50%;box-shadow:0 0 14px var(--yellow)}
 .s1{top:17%;left:22%}.s2{top:46%;right:2%}.s3{bottom:12%;left:35%}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:22px 0 34px}
-.stat{display:flex;align-items:center;gap:14px;background:#111;border:1px solid #292929;border-radius:12px;padding:16px 18px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:22px 0 34px}
+.stat{display:flex;align-items:center;gap:14px;min-width:0;background:#111;border:1px solid #292929;border-radius:12px;padding:16px 18px}
 .stat-num{font-size:27px;line-height:1;color:var(--yellow);font-weight:950;letter-spacing:-1px}
 .stat-label{font-size:9px;line-height:1.6;letter-spacing:1.1px;color:#a9a9a9;font-weight:850}
 .apps-section{padding:4px 0 55px}
@@ -110,30 +113,84 @@ h1 span{color:var(--yellow)}
 .app-open b{width:28px;height:28px;display:grid;place-items:center;background:var(--yellow);border-radius:50%;font-size:17px}
 .footer{border-top:1px solid #ffffff20;padding:20px 0 25px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#7d7d7d;font-size:9px;letter-spacing:1px}
 .footer strong{color:#eee}
-@media(max-width:950px){.app-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1.1fr .8fr}.hero-visual{transform:scale(.88)}}
-@media(max-width:700px){
-.promo-wrap{padding:14px 0 2px}
-.promo-carousel{border-radius:12px}
-.promo-slide{grid-template-columns:1fr;min-height:370px}
-.promo-slide img{height:auto;max-height:none;width:100%;aspect-ratio:16/9;object-fit:contain}
-.promo-copy{padding:27px 23px 12px}
-.promo-copy h2{font-size:clamp(30px,8vw,46px);letter-spacing:-1.5px;margin:15px 0 12px}
-.promo-copy p{font-size:12px;line-height:1.6}
-.promo-features{gap:6px;margin-top:15px}
-.promo-features span{font-size:8px;padding:8px}
-.promo-visual{min-height:165px;padding:12px}
-.promo-device{width:145px;border-radius:17px;padding:10px;transform:rotate(3deg)}
-.device-logo{width:38px;height:38px;font-size:18px;margin-bottom:9px}
-.device-top{margin-bottom:10px}
-.device-bars{height:45px;gap:4px;padding:7px}
-.device-tiles{gap:5px;margin-top:6px}
-.device-tiles span{font-size:8px;padding:8px 3px}
-.promo-arrow{width:32px;height:32px;font-size:21px}
-.promo-prev{left:7px}.promo-next{right:7px}
-.promo-dots{margin-top:11px}
+
+/* Tablet */
+@media(max-width:950px){
+ .app-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .hero{grid-template-columns:1.1fr .8fr}
+ .hero-visual{transform:scale(.88)}
+ .promo-wrap{padding-top:18px}
 }
-@media(max-width:700px){.shell{width:calc(100% - 28px)}.topbar{height:68px}.top-tag{display:none}.promo-wrap{padding:14px 0 2px}.promo-frame{border-radius:12px}.promo-frame img{max-height:none;width:100%}.promo-link{width:100%;font-size:10px;padding:0 12px}.hero{grid-template-columns:1fr;min-height:auto;padding:42px 0 30px}.hero-visual{display:none}h1{font-size:clamp(43px,11vw,62px);letter-spacing:-2.8px}.hero-copy p{font-size:13px}.stats{gap:8px;padding:17px 0 29px}.stat{padding:13px 10px;gap:8px;align-items:flex-start;flex-direction:column}.stat-num{font-size:23px}.stat-label{font-size:8px}.app-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.app-card{padding:14px;min-height:213px}.app-top{margin-bottom:15px}.app-icon{width:40px;height:40px}.app-card h2{font-size:14px}.section-title{font-size:23px}.section-sub{font-size:11px}}
-@media(max-width:370px){.brand-name{font-size:16px}.brand-label{letter-spacing:1.7px}.live{padding:8px;font-size:0}.live:before{margin:0}.app-grid{grid-template-columns:1fr}.app-card{min-height:175px}.app-card p{font-size:12px}.stats{grid-template-columns:1fr}.stat{flex-direction:row;align-items:center}.stat-label{font-size:9px}}
+/* Mobile: banner full-width and natural aspect ratio, no large empty black areas */
+@media(max-width:700px){
+ .shell{width:calc(100% - 28px)}
+ .topbar{min-height:68px;gap:8px;padding:8px 0}
+ .logo-frame{flex-basis:44px;width:44px;height:44px;border-radius:11px}
+ .brand{gap:9px}
+ .brand-label{font-size:8px;letter-spacing:clamp(1px,1.1vw,2px);overflow-wrap:anywhere}
+ .brand-name{font-size:clamp(14px,4vw,18px);letter-spacing:.2px}
+ .top-right{gap:0}
+ .live{font-size:9px;letter-spacing:.5px;padding:8px 9px}
+ .live:before{margin-right:5px}
+ .top-tag{display:none}
+ .promo-wrap{padding:14px 0 2px}
+ .promo-carousel{border-radius:12px}
+ .promo-slide:first-child{display:block}
+ .promo-slide img{width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain}
+ .promo-link{width:100%;font-size:10px;padding:0 12px;min-height:48px}
+ .promo-note{font-size:8px;line-height:1.6;letter-spacing:1px;padding:0 4px}
+ .promo-arrow{width:34px;height:34px;font-size:22px}
+ .promo-prev{left:8px}.promo-next{right:8px}
+ .promo-copy{padding:26px 20px 12px}
+ .promo-copy h2{font-size:clamp(30px,8vw,46px);letter-spacing:-1.5px;margin:15px 0 12px}
+ .promo-copy p{font-size:12px;line-height:1.6}
+ .promo-features{gap:6px;margin-top:15px}
+ .promo-features span{font-size:8px;padding:8px}
+ .promo-visual{min-height:165px;padding:12px}
+ .promo-device{width:145px;border-radius:17px;padding:10px;transform:rotate(3deg)}
+ .device-logo{width:38px;height:38px;font-size:18px;margin-bottom:9px}
+ .device-top{margin-bottom:10px}
+ .device-bars{height:45px;gap:4px;padding:7px}
+ .device-tiles{gap:5px;margin-top:6px}
+ .device-tiles span{font-size:8px;padding:8px 3px}
+ .hero{grid-template-columns:1fr;min-height:auto;padding:42px 0 30px}
+ .hero-visual{display:none}
+ h1{font-size:clamp(43px,11vw,62px);letter-spacing:-2.8px}
+ .hero-copy p{font-size:13px}
+ .hero-actions{gap:8px}
+ .btn-main,.btn-ghost{font-size:10px;padding:0 12px}
+ .stats{gap:8px;padding:17px 0 29px}
+ .stat{padding:13px 10px;gap:8px;align-items:flex-start;flex-direction:column}
+ .stat-num{font-size:23px}
+ .stat-label{font-size:8px;letter-spacing:.5px}
+ .app-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .app-card{padding:14px;min-height:213px}
+ .app-top{margin-bottom:15px}
+ .app-icon{width:40px;height:40px}
+ .app-card h2{font-size:14px}
+ .section-title{font-size:23px}
+ .section-sub{font-size:11px}
+ .section-top{align-items:center}
+ .section-count{font-size:9px;padding:9px 8px}
+ .footer{font-size:8px;line-height:1.7}
+}
+@media(max-width:390px){
+ .shell{width:calc(100% - 22px)}
+ .brand-label{letter-spacing:.8px;font-size:7px}
+ .brand-name{font-size:13px;letter-spacing:0}
+ .logo-frame{flex-basis:40px;width:40px;height:40px}
+ .live{font-size:8px;padding:7px}
+ .live:before{width:6px;height:6px;margin-right:4px}
+ .stats{grid-template-columns:1fr}
+ .stat{flex-direction:row;align-items:center}
+ .stat-label{font-size:9px}
+ .app-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .app-card{min-height:205px;padding:12px}
+ .app-card h2{font-size:13px}
+ .app-card p{font-size:10px}
+ .section-top{align-items:flex-start}
+ .section-count{white-space:normal;text-align:center}
+}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
@@ -142,7 +199,7 @@ h1 span{color:var(--yellow)}
 <header class="topbar">
   <a class="brand" href="#" aria-label="FIXZY BUSINESS beranda">
     <span class="logo-frame"><img src="logofixzy.png" alt="Logo Fixzy" onerror="this.onerror=null;this.src='logofoxzy.png'"></span>
-    <span><span class="brand-label">DIGITAL COMMAND CENTER</span><span class="brand-name" style="display:block">FIXZY BUSINESS</span></span>
+    <span class="brand-copy"><span class="brand-label">DIGITAL COMMAND CENTER</span><span class="brand-name">FIXZY BUSINESS</span></span>
   </a>
   <div class="top-right"><span class="live">PORTAL ONLINE</span><span class="top-tag">PRO EDITION</span></div>
 </header>
@@ -240,30 +297,25 @@ h1 span{color:var(--yellow)}
 
 <script>
 (function(){
-  const track = document.getElementById('promoTrack');
-  const carousel = document.getElementById('promoCarousel');
-  const dots = Array.from(document.querySelectorAll('.promo-dot'));
-  const slides = Array.from(track.children);
-  const prev = document.getElementById('promoPrev');
-  const next = document.getElementById('promoNext');
-  if (!track || !carousel || !slides.length) return;
-  let current = 0;
-  let timer = null;
-  let startX = 0;
-  let endX = 0;
-  const delay = 5500;
-
+  const track=document.getElementById('promoTrack');
+  const carousel=document.getElementById('promoCarousel');
+  const dots=Array.from(document.querySelectorAll('.promo-dot'));
+  const slides=track?Array.from(track.children):[];
+  const prev=document.getElementById('promoPrev');
+  const next=document.getElementById('promoNext');
+  if(!track||!carousel||!slides.length)return;
+  let current=0,timer=null,startX=0;
+  const delay=5500;
   function showSlide(index){
-    current = (index + slides.length) % slides.length;
-    track.style.transform = 'translate3d(' + (-current * 100) + '%,0,0)';
+    current=(index+slides.length)%slides.length;
+    track.style.transform='translate3d('+(-current*100)+'%,0,0)';
     dots.forEach((dot,i)=>{
-      dot.classList.toggle('active', i === current);
-      dot.setAttribute('aria-current', i === current ? 'true' : 'false');
+      dot.classList.toggle('active',i===current);
+      dot.setAttribute('aria-current',i===current?'true':'false');
     });
   }
-  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
-  function start(){ stop(); if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){ timer=setInterval(()=>showSlide(current+1), delay); } }
-  function restart(){ showSlide(current+1); start(); }
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  function start(){stop();if(!document.hidden&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>showSlide(current+1),delay);}
   prev.addEventListener('click',()=>{showSlide(current-1);start();});
   next.addEventListener('click',()=>{showSlide(current+1);start();});
   dots.forEach(dot=>dot.addEventListener('click',()=>{showSlide(Number(dot.dataset.slide));start();}));
@@ -273,16 +325,13 @@ h1 span{color:var(--yellow)}
   carousel.addEventListener('focusout',start);
   carousel.addEventListener('touchstart',e=>{startX=e.changedTouches[0].clientX;stop();},{passive:true});
   carousel.addEventListener('touchend',e=>{
-    endX=e.changedTouches[0].clientX;
-    const delta=endX-startX;
-    if(Math.abs(delta)>45) showSlide(current+(delta<0?1:-1));
+    const delta=e.changedTouches[0].clientX-startX;
+    if(Math.abs(delta)>45)showSlide(current+(delta<0?1:-1));
     start();
   },{passive:true});
   document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
-  showSlide(0);
-  start();
+  showSlide(0);start();
 })();
 </script>
-
 </body>
 </html>
