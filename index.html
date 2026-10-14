@@ -23,11 +23,39 @@ a{color:inherit}
 .live:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yellow);margin-right:8px;box-shadow:0 0 9px var(--yellow)}
 .top-tag{font-size:10px;color:#111;background:var(--yellow);font-weight:950;letter-spacing:1px;padding:9px 11px;border-radius:7px}
 
-/* PROMO FIXZY BUSINESS */
+/* CAROUSEL PROMO FIXZY BUSINESS */
 .promo-wrap{padding:24px 0 8px}
-.promo-frame{position:relative;display:block;max-width:100%;overflow:hidden;border:1px solid #8f7610;border-radius:20px;background:#030303;box-shadow:0 18px 55px #0009,0 0 32px #ffd40012}
-.promo-frame img{display:block;width:100%;height:auto;max-height:760px;object-fit:contain;object-position:center;background:#030303;transition:transform .35s}
-.promo-frame:hover img{transform:scale(1.012)}
+.promo-carousel{position:relative;width:100%;overflow:hidden;border:1px solid #6e5c18;border-radius:18px;background:#030407;box-shadow:0 18px 55px #0009,0 0 30px #ffd40010;isolation:isolate}
+.promo-track{display:flex;will-change:transform;transition:transform .85s cubic-bezier(.22,.75,.25,1);touch-action:pan-y}
+.promo-slide{position:relative;flex:0 0 100%;min-width:0;min-height:clamp(270px,42vw,510px);overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;background:radial-gradient(ellipse at 70% 50%,#5b460c 0,#17130a 35%,#050609 72%)}
+.promo-slide:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 25%,#ffd4000b 50%,transparent 70%)}
+.promo-slide img{display:block;width:100%;height:100%;max-height:510px;object-fit:contain;grid-column:1/-1;background:#030303}
+.promo-copy{position:relative;z-index:1;padding:clamp(24px,5vw,58px);max-width:760px}
+.promo-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;background:#ffd400;color:#111;border-radius:6px;font-size:clamp(9px,1.1vw,12px);font-weight:950;letter-spacing:.7px}
+.promo-copy h2{font-size:clamp(30px,5vw,66px);line-height:.98;letter-spacing:-2px;margin:20px 0 15px;font-weight:1000;text-transform:uppercase}
+.promo-copy h2 span{color:#ffd400}
+.promo-copy p{max-width:490px;color:#d2d2d2;font-size:clamp(12px,1.5vw,16px);line-height:1.7;margin:0}
+.promo-features{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.promo-features span{border:1px solid #ffd40070;background:#08090dbb;color:#fff;border-radius:8px;padding:10px 12px;font-size:10px;font-weight:900;letter-spacing:.5px}
+.promo-visual{position:relative;min-height:300px;display:grid;place-items:center;padding:25px}
+.promo-device{width:min(290px,90%);aspect-ratio:.78;border:2px solid #6b5b1d;border-radius:26px;background:linear-gradient(155deg,#20242d,#050609 60%);padding:18px;box-shadow:0 18px 60px #000b,0 0 45px #ffd40017;transform:rotate(5deg)}
+.device-top{height:8px;width:42%;border-radius:20px;background:#5c5c5c;margin:0 auto 18px}
+.device-logo{display:grid;place-items:center;background:linear-gradient(145deg,#ffe66d,#ffd400);color:#111;font-size:26px;font-weight:1000;letter-spacing:-2px;border-radius:13px;width:64px;height:64px;margin:0 auto 16px}
+.device-bars{height:90px;display:flex;align-items:end;gap:8px;padding:12px;border:1px solid #333;border-radius:10px;background:#0d1017}
+.device-bars i{display:block;flex:1;background:linear-gradient(#ffe66d,#ffd400);border-radius:4px 4px 0 0}
+.device-bars i:nth-child(1){height:25%}.device-bars i:nth-child(2){height:42%}.device-bars i:nth-child(3){height:34%}.device-bars i:nth-child(4){height:65%}.device-bars i:nth-child(5){height:83%}.device-bars i:nth-child(6){height:100%}
+.device-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.device-tiles span{padding:14px 6px;text-align:center;border:1px solid #393939;border-radius:8px;background:#151922;color:#ffd400;font-size:10px;font-weight:900}
+.promo-slide.alt-blue{background:radial-gradient(ellipse at 70% 45%,#0647a5 0,#09162c 43%,#050609 78%)}
+.promo-slide.alt-white{background:radial-gradient(ellipse at 70% 45%,#6d5c09 0,#19170b 40%,#050609 78%)}
+.promo-slide.alt-stock{background:radial-gradient(ellipse at 70% 45%,#353535 0,#171717 42%,#050609 78%)}
+.promo-slide.alt-yellow{background:radial-gradient(ellipse at 70% 45%,#554500 0,#201a05 42%,#050609 78%)}
+.promo-arrow{position:absolute;z-index:4;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid #ffffff80;background:#05070dcc;color:#fff;font-size:25px;display:grid;place-items:center;cursor:pointer;transition:.2s;backdrop-filter:blur(8px)}
+.promo-arrow:hover{background:#ffd400;color:#111;border-color:#ffd400}
+.promo-prev{left:14px}.promo-next{right:14px}
+.promo-dots{display:flex;justify-content:center;gap:9px;margin:13px 0 0}
+.promo-dot{width:9px;height:9px;border:0;border-radius:50%;padding:0;background:#555;cursor:pointer;transition:width .25s,background .25s}
+.promo-dot.active{width:25px;border-radius:99px;background:#ffd400;box-shadow:0 0 12px #ffd40055}
 .promo-link{display:flex;justify-content:center;align-items:center;gap:10px;margin:15px auto 0;width:max-content;max-width:100%;min-height:45px;padding:0 22px;border-radius:9px;background:linear-gradient(135deg,#ffe66d,#ffd400);color:#111;text-decoration:none;font-size:11px;font-weight:950;letter-spacing:.7px;box-shadow:0 7px 25px #ffd40020;transition:.2s}
 .promo-link:hover{transform:translateY(-2px);box-shadow:0 10px 30px #ffd40035}
 .promo-note{text-align:center;color:#888;font-size:9px;letter-spacing:1.3px;margin:10px 0 0;font-weight:800}
@@ -83,6 +111,27 @@ h1 span{color:var(--yellow)}
 .footer{border-top:1px solid #ffffff20;padding:20px 0 25px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#7d7d7d;font-size:9px;letter-spacing:1px}
 .footer strong{color:#eee}
 @media(max-width:950px){.app-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1.1fr .8fr}.hero-visual{transform:scale(.88)}}
+@media(max-width:700px){
+.promo-wrap{padding:14px 0 2px}
+.promo-carousel{border-radius:12px}
+.promo-slide{grid-template-columns:1fr;min-height:370px}
+.promo-slide img{height:auto;max-height:none;width:100%;object-fit:contain}
+.promo-copy{padding:27px 23px 12px}
+.promo-copy h2{font-size:clamp(30px,8vw,46px);letter-spacing:-1.5px;margin:15px 0 12px}
+.promo-copy p{font-size:12px;line-height:1.6}
+.promo-features{gap:6px;margin-top:15px}
+.promo-features span{font-size:8px;padding:8px}
+.promo-visual{min-height:165px;padding:12px}
+.promo-device{width:145px;border-radius:17px;padding:10px;transform:rotate(3deg)}
+.device-logo{width:38px;height:38px;font-size:18px;margin-bottom:9px}
+.device-top{margin-bottom:10px}
+.device-bars{height:45px;gap:4px;padding:7px}
+.device-tiles{gap:5px;margin-top:6px}
+.device-tiles span{font-size:8px;padding:8px 3px}
+.promo-arrow{width:32px;height:32px;font-size:21px}
+.promo-prev{left:7px}.promo-next{right:7px}
+.promo-dots{margin-top:11px}
+}
 @media(max-width:700px){.shell{width:calc(100% - 28px)}.topbar{height:68px}.top-tag{display:none}.promo-wrap{padding:14px 0 2px}.promo-frame{border-radius:12px}.promo-frame img{max-height:none;width:100%}.promo-link{width:100%;font-size:10px;padding:0 12px}.hero{grid-template-columns:1fr;min-height:auto;padding:42px 0 30px}.hero-visual{display:none}h1{font-size:clamp(43px,11vw,62px);letter-spacing:-2.8px}.hero-copy p{font-size:13px}.stats{gap:8px;padding:17px 0 29px}.stat{padding:13px 10px;gap:8px;align-items:flex-start;flex-direction:column}.stat-num{font-size:23px}.stat-label{font-size:8px}.app-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.app-card{padding:14px;min-height:213px}.app-top{margin-bottom:15px}.app-icon{width:40px;height:40px}.app-card h2{font-size:14px}.section-title{font-size:23px}.section-sub{font-size:11px}}
 @media(max-width:370px){.brand-name{font-size:16px}.brand-label{letter-spacing:1.7px}.live{padding:8px;font-size:0}.live:before{margin:0}.app-grid{grid-template-columns:1fr}.app-card{min-height:175px}.app-card p{font-size:12px}.stats{grid-template-columns:1fr}.stat{flex-direction:row;align-items:center}.stat-label{font-size:9px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
@@ -99,11 +148,59 @@ h1 span{color:var(--yellow)}
 </header>
 
 <main>
-<section class="promo-wrap" aria-label="Iklan Fixzy Business">
-  <a class="promo-frame" href="https://fixzy-business.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Kenali Fixzy Business">
-    <img src="fixzy-business-banner.png" alt="Iklan FIXZY BUSINESS — solusi digital untuk usaha servis HP. Usaha lebih terkontrol dengan fitur servis, penjualan, stok, dan keuangan." onerror="this.style.display='none';document.getElementById('promo-fallback').style.display='block'">
-  </a>
-  <div id="promo-fallback" style="display:none;padding:24px;text-align:center;color:#FFD400;border:1px solid #FFD40055;border-radius:12px">Banner tidak ditemukan. Pastikan file <b>fixzy-business-banner.png</b> diunggah satu folder dengan index.html.</div>
+<section class="promo-wrap" aria-label="Iklan FIXZY BUSINESS">
+  <div class="promo-carousel" id="promoCarousel">
+    <div class="promo-track" id="promoTrack">
+      <a class="promo-slide" href="https://fixzy-business.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Kenali FIXZY BUSINESS">
+        <img src="fixzy-business-banner.png" alt="FIXZY BUSINESS — solusi digital untuk usaha servis HP, servis, penjualan, stok, dan keuangan">
+      </a>
+      <div class="promo-slide alt-blue">
+        <div class="promo-copy">
+          <span class="promo-kicker">01 · SERVIS LEBIH RAPI</span>
+          <h2>Semua servis<br><span>tercatat rapi.</span></h2>
+          <p>Catat pekerjaan teknisi, pantau status servis, dan kelola data pelanggan dalam satu alur kerja yang praktis.</p>
+          <div class="promo-features"><span>DATA SERVIS</span><span>STATUS PEKERJAAN</span><span>RIWAYAT PELANGGAN</span></div>
+        </div>
+        <div class="promo-visual"><div class="promo-device"><div class="device-top"></div><div class="device-logo">FX</div><div class="device-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="device-tiles"><span>🛠 SERVIS</span><span>✓ SELESAI</span><span>DATA HP</span><span>RIWAYAT</span></div></div></div>
+      </div>
+      <div class="promo-slide alt-yellow">
+        <div class="promo-copy">
+          <span class="promo-kicker">02 · PENJUALAN TERKONTROL</span>
+          <h2>Transaksi cepat.<br><span>Laporan jelas.</span></h2>
+          <p>Kelola penjualan produk dan layanan, simpan transaksi, serta tinjau catatan usaha dengan lebih mudah.</p>
+          <div class="promo-features"><span>PENJUALAN</span><span>NOTA TRANSAKSI</span><span>REKAP HARIAN</span></div>
+        </div>
+        <div class="promo-visual"><div class="promo-device"><div class="device-top"></div><div class="device-logo">FX</div><div class="device-tiles"><span>🛒 PENJUALAN</span><span>Rp TOTAL</span><span>NOTA</span><span>REKAP</span></div><div class="device-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+      </div>
+      <div class="promo-slide alt-stock">
+        <div class="promo-copy">
+          <span class="promo-kicker">03 · STOK SELALU TERPANTAU</span>
+          <h2>Stok tertata.<br><span>Belanja terukur.</span></h2>
+          <p>Pantau ketersediaan produk dan bantu kendalikan persediaan agar operasional konter lebih teratur.</p>
+          <div class="promo-features"><span>STOK PRODUK</span><span>DATA BARANG</span><span>PEMANTAUAN STOK</span></div>
+        </div>
+        <div class="promo-visual"><div class="promo-device"><div class="device-top"></div><div class="device-logo">FX</div><div class="device-tiles"><span>▣ PRODUK</span><span>▦ STOK</span><span>LCD</span><span>BATERAI</span></div><div class="device-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+      </div>
+      <div class="promo-slide alt-blue">
+        <div class="promo-copy">
+          <span class="promo-kicker">04 · KEUANGAN LEBIH JELAS</span>
+          <h2>Pantau biaya.<br><span>Pahami laba.</span></h2>
+          <p>Satukan pencatatan pemasukan dan pengeluaran untuk membantu Anda memahami kondisi usaha dengan lebih baik.</p>
+          <div class="promo-features"><span>PENDAPATAN</span><span>PENGELUARAN</span><span>LABA USAHA</span></div>
+        </div>
+        <div class="promo-visual"><div class="promo-device"><div class="device-top"></div><div class="device-logo">FX</div><div class="device-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="device-tiles"><span>Rp MASUK</span><span>Rp KELUAR</span><span>LABA</span><span>LAPORAN</span></div></div></div>
+      </div>
+    </div>
+    <button class="promo-arrow promo-prev" id="promoPrev" type="button" aria-label="Slide sebelumnya">‹</button>
+    <button class="promo-arrow promo-next" id="promoNext" type="button" aria-label="Slide berikutnya">›</button>
+  </div>
+  <div class="promo-dots" id="promoDots" aria-label="Pilih slide iklan">
+    <button class="promo-dot active" type="button" aria-label="Slide 1" data-slide="0"></button>
+    <button class="promo-dot" type="button" aria-label="Slide 2" data-slide="1"></button>
+    <button class="promo-dot" type="button" aria-label="Slide 3" data-slide="2"></button>
+    <button class="promo-dot" type="button" aria-label="Slide 4" data-slide="3"></button>
+    <button class="promo-dot" type="button" aria-label="Slide 5" data-slide="4"></button>
+  </div>
   <a class="promo-link" href="https://fixzy-business.vercel.app" target="_blank" rel="noopener noreferrer">KENALI FIXZY BUSINESS <span aria-hidden="true">↗</span></a>
   <p class="promo-note">SOLUSI DIGITAL UNTUK USAHA SERVIS HP · FIXZY BUSINESS</p>
 </section>
@@ -140,5 +237,52 @@ h1 span{color:var(--yellow)}
 </main>
 <footer class="footer"><span><strong>FIXZY BUSINESS</strong> · DIGITAL COMMAND CENTER</span><span>DESIGNED FOR BUSINESS · RESPONSIVE PRO EDITION</span></footer>
 </div>
+
+<script>
+(function(){
+  const track = document.getElementById('promoTrack');
+  const carousel = document.getElementById('promoCarousel');
+  const dots = Array.from(document.querySelectorAll('.promo-dot'));
+  const slides = Array.from(track.children);
+  const prev = document.getElementById('promoPrev');
+  const next = document.getElementById('promoNext');
+  if (!track || !carousel || !slides.length) return;
+  let current = 0;
+  let timer = null;
+  let startX = 0;
+  let endX = 0;
+  const delay = 5500;
+
+  function showSlide(index){
+    current = (index + slides.length) % slides.length;
+    track.style.transform = 'translate3d(' + (-current * 100) + '%,0,0)';
+    dots.forEach((dot,i)=>{
+      dot.classList.toggle('active', i === current);
+      dot.setAttribute('aria-current', i === current ? 'true' : 'false');
+    });
+  }
+  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+  function start(){ stop(); if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){ timer=setInterval(()=>showSlide(current+1), delay); } }
+  function restart(){ showSlide(current+1); start(); }
+  prev.addEventListener('click',()=>{showSlide(current-1);start();});
+  next.addEventListener('click',()=>{showSlide(current+1);start();});
+  dots.forEach(dot=>dot.addEventListener('click',()=>{showSlide(Number(dot.dataset.slide));start();}));
+  carousel.addEventListener('mouseenter',stop);
+  carousel.addEventListener('mouseleave',start);
+  carousel.addEventListener('focusin',stop);
+  carousel.addEventListener('focusout',start);
+  carousel.addEventListener('touchstart',e=>{startX=e.changedTouches[0].clientX;stop();},{passive:true});
+  carousel.addEventListener('touchend',e=>{
+    endX=e.changedTouches[0].clientX;
+    const delta=endX-startX;
+    if(Math.abs(delta)>45) showSlide(current+(delta<0?1:-1));
+    start();
+  },{passive:true});
+  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+  showSlide(0);
+  start();
+})();
+</script>
+
 </body>
 </html>
