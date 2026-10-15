@@ -135,9 +135,44 @@ h1 span{color:var(--yellow)}
  .top-tag{display:none}
  .promo-wrap{padding:14px 0 2px}
  .promo-carousel{border-radius:12px}
- .promo-slide:first-child{display:block;min-height:0;height:auto}
- .promo-slide:first-child img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain}
- .promo-slide:not(:first-child){min-height:390px}
+ .promo-slide{
+   display:block;
+   width:100%;
+   min-height:0;
+   height:auto;
+   aspect-ratio:16/9;
+   overflow:hidden;
+ }
+ .promo-slide:first-child{min-height:0;height:auto;aspect-ratio:16/9}
+ .promo-slide img{
+   display:block;
+   width:100%;
+   height:100%;
+   max-height:none;
+   aspect-ratio:16/9;
+   object-fit:contain;
+ }
+ .promo-slide:not(:first-child){
+   min-height:0;
+   height:auto;
+   aspect-ratio:16/9;
+   display:grid;
+   grid-template-columns:1fr 1fr;
+   align-items:center;
+ }
+ .promo-slide:not(:first-child) .promo-copy{padding:clamp(10px,3vw,22px)}
+ .promo-slide:not(:first-child) .promo-copy h2{font-size:clamp(16px,4.4vw,28px);letter-spacing:-.7px;line-height:1;margin:9px 0}
+ .promo-slide:not(:first-child) .promo-copy p{font-size:clamp(8px,1.9vw,11px);line-height:1.45}
+ .promo-slide:not(:first-child) .promo-kicker{font-size:clamp(7px,1.7vw,9px);padding:5px 7px}
+ .promo-slide:not(:first-child) .promo-features{gap:4px;margin-top:9px}
+ .promo-slide:not(:first-child) .promo-features span{font-size:clamp(6px,1.5vw,8px);padding:5px}
+ .promo-slide:not(:first-child) .promo-visual{min-height:0;padding:8px}
+ .promo-slide:not(:first-child) .promo-device{width:min(145px,90%);border-radius:14px;padding:9px;transform:rotate(3deg)}
+ .promo-slide:not(:first-child) .device-logo{width:34px;height:34px;font-size:16px;margin-bottom:8px}
+ .promo-slide:not(:first-child) .device-top{margin-bottom:8px}
+ .promo-slide:not(:first-child) .device-bars{height:42px;gap:4px;padding:6px}
+ .promo-slide:not(:first-child) .device-tiles{gap:4px;margin-top:5px}
+ .promo-slide:not(:first-child) .device-tiles span{font-size:7px;padding:6px 3px}
  .promo-link{width:100%;font-size:10px;padding:0 12px;min-height:48px}
  .promo-note{font-size:8px;line-height:1.6;letter-spacing:1px;padding:0 4px}
  .promo-arrow{width:34px;height:34px;font-size:22px}
