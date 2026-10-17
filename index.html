@@ -135,44 +135,9 @@ h1 span{color:var(--yellow)}
  .top-tag{display:none}
  .promo-wrap{padding:14px 0 2px}
  .promo-carousel{border-radius:12px}
- .promo-slide{
-   display:block;
-   width:100%;
-   min-height:0;
-   height:auto;
-   aspect-ratio:16/9;
-   overflow:hidden;
- }
- .promo-slide:first-child{min-height:0;height:auto;aspect-ratio:16/9}
- .promo-slide img{
-   display:block;
-   width:100%;
-   height:100%;
-   max-height:none;
-   aspect-ratio:16/9;
-   object-fit:contain;
- }
- .promo-slide:not(:first-child){
-   min-height:0;
-   height:auto;
-   aspect-ratio:16/9;
-   display:grid;
-   grid-template-columns:1fr 1fr;
-   align-items:center;
- }
- .promo-slide:not(:first-child) .promo-copy{padding:clamp(10px,3vw,22px)}
- .promo-slide:not(:first-child) .promo-copy h2{font-size:clamp(16px,4.4vw,28px);letter-spacing:-.7px;line-height:1;margin:9px 0}
- .promo-slide:not(:first-child) .promo-copy p{font-size:clamp(8px,1.9vw,11px);line-height:1.45}
- .promo-slide:not(:first-child) .promo-kicker{font-size:clamp(7px,1.7vw,9px);padding:5px 7px}
- .promo-slide:not(:first-child) .promo-features{gap:4px;margin-top:9px}
- .promo-slide:not(:first-child) .promo-features span{font-size:clamp(6px,1.5vw,8px);padding:5px}
- .promo-slide:not(:first-child) .promo-visual{min-height:0;padding:8px}
- .promo-slide:not(:first-child) .promo-device{width:min(145px,90%);border-radius:14px;padding:9px;transform:rotate(3deg)}
- .promo-slide:not(:first-child) .device-logo{width:34px;height:34px;font-size:16px;margin-bottom:8px}
- .promo-slide:not(:first-child) .device-top{margin-bottom:8px}
- .promo-slide:not(:first-child) .device-bars{height:42px;gap:4px;padding:6px}
- .promo-slide:not(:first-child) .device-tiles{gap:4px;margin-top:5px}
- .promo-slide:not(:first-child) .device-tiles span{font-size:7px;padding:6px 3px}
+ .promo-slide:first-child{display:block;min-height:0;height:auto}
+ .promo-slide:first-child img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain}
+ .promo-slide:not(:first-child){min-height:390px}
  .promo-link{width:100%;font-size:10px;padding:0 12px;min-height:48px}
  .promo-note{font-size:8px;line-height:1.6;letter-spacing:1px;padding:0 4px}
  .promo-arrow{width:34px;height:34px;font-size:22px}
@@ -318,10 +283,10 @@ h1 span{color:var(--yellow)}
   <div class="section-top"><div><div class="section-eyebrow">QUICK ACCESS DIRECTORY</div><h2 class="section-title">Direktori Aplikasi</h2><p class="section-sub">Pilih layanan yang ingin Anda buka.</p></div><div class="section-count">08 LAYANAN</div></div>
   <nav class="app-grid" aria-label="Daftar aplikasi">
     <a class="app-card" href="https://fixzy-business.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">FX</span><span class="app-index">01 / 08</span></div><h2>Fixzy Business</h2><p>Portal utama untuk akses layanan dan kebutuhan bisnis Fixzy.</p><span class="app-open">BUKA APLIKASI <b>↗</b></span></a>
-    <a class="app-card" href="https://fixzy-olive.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">OL</span><span class="app-index">02 / 08</span></div><h2>Fixzy Olive</h2><p>Akses layanan aplikasi Fixzy Olive melalui halaman khusus.</p><span class="app-open">BUKA APLIKASI <b>↗</b></span></a>
-    <a class="app-card" href="https://teknisi-pondel-maja.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">TP</span><span class="app-index">03 / 08</span></div><h2>Teknisi Ponsel Maja</h2><p>Portal layanan dan informasi seputar teknisi ponsel.</p><span class="app-open">BUKA APLIKASI <b>↗</b></span></a>
-    <a class="app-card" href="https://toko-siap-antar.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">SA</span><span class="app-index">04 / 08</span></div><h2>Toko Siap Antar</h2><p>Akses katalog dan layanan toko dengan praktis.</p><span class="app-open">BUKA TOKO <b>↗</b></span></a>
-    <a class="app-card" href="https://konter-ayudithea.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">AY</span><span class="app-index">05 / 08</span></div><h2>Konter A Yudi Thea</h2><p>Akses konter untuk kebutuhan servis dan produk ponsel.</p><span class="app-open">BUKA KONTER <b>↗</b></span></a>
+    <a class="app-card" href="https://fixzy-cerdas.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">FC</span><span class="app-index">02 / 08</span></div><h2>Fixzy Cerdas</h2><p>Akses layanan FIXZY Cerdas untuk mendukung kebutuhan digital dan produktivitas.</p><span class="app-open">BUKA FIXZY CERDAS <b>↗</b></span></a>
+    <a class="app-card" href="https://fixzy-olive.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">OL</span><span class="app-index">03 / 08</span></div><h2>Fixzy Olive</h2><p>Akses layanan aplikasi Fixzy Olive melalui halaman khusus.</p><span class="app-open">BUKA APLIKASI <b>↗</b></span></a>
+    <a class="app-card" href="https://teknisi-pondel-maja.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">TP</span><span class="app-index">04 / 08</span></div><h2>Teknisi Ponsel Maja</h2><p>Portal layanan dan informasi seputar teknisi ponsel.</p><span class="app-open">BUKA APLIKASI <b>↗</b></span></a>
+    <a class="app-card" href="https://toko-siap-antar.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">SA</span><span class="app-index">05 / 08</span></div><h2>Toko Siap Antar</h2><p>Akses katalog dan layanan toko dengan praktis.</p><span class="app-open">BUKA TOKO <b>↗</b></span></a>
     <a class="app-card" href="https://registrasi-peserta.vercel.app" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">RG</span><span class="app-index">06 / 08</span></div><h2>Registrasi Peserta</h2><p>Halaman pendaftaran dan administrasi peserta acara.</p><span class="app-open">BUKA REGISTRASI <b>↗</b></span></a>
     <a class="app-card" href="https://bisnisyudi68-lang.github.io/Tracker-Ibadah-Harian" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">IB</span><span class="app-index">07 / 08</span></div><h2>Tracker Ibadah Harian</h2><p>Alat bantu untuk mencatat dan memantau rutinitas ibadah.</p><span class="app-open">BUKA TRACKER <b>↗</b></span></a>
     <a class="app-card" href="https://datausaha070-source.github.io/Cek-healty-storage" target="_blank" rel="noopener noreferrer"><div class="app-top"><span class="app-icon">ST</span><span class="app-index">08 / 08</span></div><h2>Cek Healthy Storage</h2><p>Alat bantu untuk memeriksa informasi storage perangkat.</p><span class="app-open">BUKA ALAT <b>↗</b></span></a>
